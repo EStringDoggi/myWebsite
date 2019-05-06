@@ -1,0 +1,51 @@
+.clearfix{
+	*zoom:1;
+}
+.clearfix:before,
+.clearfix:after
+{
+	display: table;
+	content: "";
+}
+.clearfix:after{
+	clear:both;
+}
+html body{
+    background-color: rgb(248, 248, 248);
+    font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+    color:#424242;
+  }
+.typepage {
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  margin:0 auto;
+}
+
+@media screen and (max-width:767px) {
+  .typepage {
+    flex-wrap: wrap;
+  }
+
+}
+
+@media screen and (min-width:768px) {
+  .typepage {
+    width: 760px;
+    max-width: 760px;
+  }
+}
+
+@media screen and (min-width:992px) {
+  .typepage {
+    width: 970px;
+    max-width: 970px;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .typepage {
+    width: 1140px;
+    max-width: 1140px;
+    /* padding: 0 20px 0 20px */
+  }
+}
