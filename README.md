@@ -3,13 +3,13 @@
 ```
 ├─assets
 ├─components
-│  ├─other  #其他
-│  │  ├─photo
-│  │  ├─video
-│  │  └─web
-│  ├─resume
-│  ├─trend
-│  └─works
+│  ├─other          #其他
+│  │  ├─photo       #图片
+│  │  ├─video       #视频
+│  │  └─web         #网站
+│  ├─resume         #关于我
+│  ├─trend          #动态
+│  └─works          #作品
 └─router
 ```
 ### 用了哪些技术（主页）
