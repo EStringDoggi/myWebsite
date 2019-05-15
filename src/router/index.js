@@ -44,7 +44,7 @@ export default new Router({
     },
     {
       path:'*',
-      redirect:'/resume'
+      redirect:'/works'
     }
   ]
 })

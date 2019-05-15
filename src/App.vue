@@ -32,12 +32,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  /* color: #2c3e50; */
-  /* margin-top: 40px; */
-  /* overflow: hidden; */
-  /* transform: perspective(100px); */
+  background-image: url(../static/img/bgimg_3.png);
+  background-repeat: repeat;
 }
 .views{
   min-height: 700px;
 }
+
 </style>

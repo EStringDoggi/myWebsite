@@ -122,7 +122,8 @@ export default {
     }
     &::before{
         content:'';
-        display: none;
+        display: block;
+        opacity: 0;
         position: absolute;
         top: -1em;
         left: 50%;
@@ -130,20 +131,19 @@ export default {
         width: 1.5em;
         height: 1.5em;
         background-image: url(../../static/img/icon/paw.png);
-        background-size: cover;       
+        background-size: cover; 
+        transition: 0.3s;      
     }
     &:nth-child(2n)::before{
         top: -2em;
     }
     &:hover {
-      // background-color: rgb(0, 132, 255);
-      // transform: scale(1.1);
       a{
         transform: translateY(10px);
         text-shadow: 0px 2px 2px rgb(12, 85, 182);
       }
       &::before{
-        display: block;
+        opacity: 1;
       }
     }
   }

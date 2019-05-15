@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div style="position:relative">
+        <em class="page"></em>
         <div class="head-img">
             <img src="../../../static/img/IMG_1968_2.jpg" alt>
           </div>
@@ -50,6 +51,26 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+@media screen and(max-width:767px){
+    p{
+        text-align: center;
+    }
+}
+@media screen and (min-width:768px){
+    p{
+        text-align: left;
+        padding-left: 4em;
+    }
+  }
+    .page{
+      position: absolute;
+      width: 24px;
+      height: 28px;
+      top: 0;
+      right: 0;
+      background-image: url(/static/img/icon/resume.png);
+      background-color: rgb(248, 248, 248);
+    }
     .head-img {
       width: 100px;
       height: 100px;
@@ -65,6 +86,7 @@ export default {
         // border: 1px solid #ccc;
         // border-radius: 50%;
       }
+      
       &::after {
         content: "";
         width: 98px;

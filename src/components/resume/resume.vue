@@ -1,6 +1,4 @@
 <template>
-
-
   <div class="resume">
       <section class="information">
         <information></information>
@@ -13,8 +11,6 @@
             深圳职业技术学院18届毕业生，主修计算机信息管理，兼修计算机多媒体。
             本科（深圳大学自考）专业为金融管理。
             <br>
-
-            
           </p>
           <p class="school">
             <b>深圳职业技术学院</b>
@@ -24,30 +20,57 @@
           <p class="school">
             <b>深圳大学</b>
             <b class="sub">（非全日制本科）</b>
-            <i>2016.9-2018.12</i>
-            
-
-          </p>
-
-            
+            <i>2016.9-2018.12</i>           
+          </p> 
         </div>
         <div class="skill">
           <h3>我的技能</h3>
-          <span>半年内敲的：</span>
+          <span>web</span>
           <p>
-            html5、css、js、css精灵图、ajax、webpack、
-            ES6、小程序云开发、git
+            <ul>
+              <li>熟悉
+                <em>html5</em> 、<em>css3</em>、<em>js</em>语法,了解<em>ES6</em>特性
+              </li>
+              <li>熟悉
+                <em>ajax</em>请求
+              </li>
+              <li>了解
+                <em>webpack</em>,使用<em>git</em>进行代码管理，<em>markdown</em>进行文档编写
+              </li>
+              <li>了解
+                <em>小程序云开发</em>
+              </li>
+              <li>了解<em>vue</em>、<em>vuex</em>、<em>vue-cli</em>、
+                <em>vue-router</em>、<em>axios</em>使用并搭建单页面应用
+              </li>
+              <li>了解<em>Bootstrap</em>、<em>jQuery</em>，
+                <em>animate</em>、<em>artTemplate</em>、
+                <em>masonry</em>、<em>lazyload</em>、<em>babel</em>、
+                <em>fullPage</em>、<em>velocity</em>库和插件的使用
+              </li>
+            </ul>
           </p>
-          <span>以前敲的：</span>
-          <p>asp.net、SQL</p>
-          <span>会使用的框架、工具与插件：</span>
+          <span>其他</span>
           <p>
-            vue、vuex、vue-cli、vue-router、axios、
-            Bootstrap、jQuery、animate、artTemplate、masonry、lazyload、
-            babel、fullPage、velocity
-          </p>
+            <ul>
+              <li>
+                <em>asp.net</em>
+              </li>
+              <li>
+                <em>SQL</em>
+              </li>
+              <li>开发工具<em>vsCode</em>、<em>atom</em>
+              </li>
+            </ul>
+            </p>
           <span>多媒体：</span>
-          <p>PS（修修照片）、PR（视频剪辑）、AE（加点简单特效）</p>
+          <p>
+            <ul>
+              <li><em>PS</em>切图、修图美化</li>
+              <li><em>PR</em>视频剪辑</li>
+              <li><em>AE</em>视频效果</li>
+            </ul>
+          </p>
         </div>
         <div class="job clearfix">
           <h3>工作经历</h3>
@@ -86,11 +109,31 @@
                   </b>
                   <ul>
                       <li>
-                        （1）主页：vue、vue-Cli、vue-router、axios、Element-ul、animate.css
+                        （1）主页：<em>vue</em>、
+                        <em>vue-Cli</em>、
+                        <em>vue-router</em>、
+                        <em>axios</em>、
+                        <em>Element-ul</em>、
+                        <em>animate.css</em>
                       </li>
-                      <li>（2）电商布局：jQuery,ajax,artTemplate,lazyload</li>
-                      <li>（3）公司展示型页面：jQuery,artTemplate,velocity,fullPage,Bootstrap,ajax</li>
+                      <li>（2）电商布局：<em>jQuery</em>,
+                        <em>ajax</em>,
+                        <em>artTemplate</em>,
+                        <em>lazyload</em>
+                      </li>
+                      <li>（3）公司展示型页面：
+                        <em>jQuery</em>,
+                        <em>artTemplate</em>,
+                        <em>velocity</em>,
+                        <em>fullPage</em>,
+                        <em>Bootstrap</em>,
+                        <em>ajax</em>
+                      </li>
                   </ul>
+              </p>
+              <p>
+                <b>开发环境：</b>
+                visual Studio Code
               </p>
             </li>
             <li>
@@ -108,13 +151,13 @@
                       2)天数计算:选择起始结束日期返回天数
                     </li>
                     <li>
-                      3)表情包制作：选择一张表情图填充文字并导出图片。
+                      3)表情包制作：从云端获取表情图，用户选择一张表情图填充文字并导出图片。
                       支持文本拖拽，文本格式选择，多段文字插入。
                       canvas针对图片比例自适应，原图画质导出。
-                      可以从相册获取图片，也可以上传图片至云端供其他用户使用
+                      用户可以从相册获取图片，也可以上传图片至云端供其他用户使用
                     </li>
                     <li>
-                      4)涂鸦板：选择背景色、笔色号及大小，绘制涂鸦，支持返回上一步，支持导出图片
+                      4)涂鸦板：选择背景色、笔色号及大小等，绘制涂鸦，支持返回上一步，支持导出图片
                     </li>
                     <li>
                       5)管理个人上传表情图：删除云端个人上传的表情图片
@@ -144,7 +187,7 @@
               </p>
               <p>
                 <b>开发环境：</b>
-                visual studio 2010。
+                visual studio 2010
               </p>
             </li>
             
@@ -188,7 +231,7 @@
           <p>学代码、准备好作品投简历，日语N3备考</p>
         </div>
       </article>
-      <aside class="clearfix">
+      <aside class="clearfix" >
         <information></information>
       </aside>
     </section>
@@ -198,19 +241,55 @@
 <script>
 import information from './information'
 export default {
+  data() {
+    return {
+
+    }
+  },
   components:{
     information
-  }
+  },mounted() {
+    var aside = document.getElementsByTagName('aside')[0] || null;
+    var asideTop = aside.offsetTop || null;
+    var scrollTop;
+
+    window.addEventListener('scroll',()=>{
+    // 屏幕滚动距离
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    // console.log("scrollTop:",scrollTop);
+    if(!asideTop){
+      asideTop = aside.offsetTop || null;
+    }
+    if(scrollTop - asideTop > 0){
+        
+        aside.style.top = scrollTop - asideTop + 'px';
+    }
+    if(scrollTop - asideTop < 0){
+      aside.style.top = 0;
+    }
+})
+  },
+  methods: {
+
+  },
 };
 </script>
 <style lang="less" scoped>
 .resume {
+
 @media screen and (max-width:767px) {
   aside{
     display: none;
   }
   .information{
     display: block;
+    background-color: #fff;
+  }
+  .typepage{
+    article{
+      margin-right: 0;
+    }
+
   }
 }
 @media screen and (min-width:768px){
@@ -219,8 +298,27 @@ export default {
   }
   aside{
     display: block;
+    box-shadow: -2px 5px 5px -2px silver;
+
   }
+  article{
+    margin-right: 10px;
+  }
+
 }
+  // 技能高亮
+  em{
+    font-style:normal;
+    border: 1px solid #d1d1d1;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    padding:0px 3px;
+    font-size: 0.8em;
+  }
+  .information{
+    box-shadow: -2px 5px 5px -2px silver;
+    border-radius: 5px;
+  }
 
 
   section {
@@ -236,12 +334,15 @@ export default {
     text-align: left;
     overflow: hidden;
     text-indent: 2em;
+    box-shadow: 0 0 15px silver;
+
     p {
       padding: 0 1em;
       line-height: 1.7em;
+      font-size: 0.9em;
     }
     span {
-      margin: 1em 0 0 1em;
+      margin: 0em 0 0 1em;
       text-indent: 0em;
       display: inline-block;
       text-align: left;
@@ -252,7 +353,7 @@ export default {
       font-weight: bolder;
     }
     h3 {
-      margin: 0;
+      margin: 0 0 1em 0;
       padding: 10px 0;
       background-color: rgb(36, 36, 36);
       color: #fff;
@@ -271,6 +372,24 @@ export default {
     }
     // 技能
     .skill {
+      ul{
+        text-indent: 0em;
+        margin-bottom: 0;
+        padding-top: 1em;
+        li{
+          &::before{
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            background-color: #0099ff;
+            vertical-align: middle;
+            position: relative;
+            left: -5px;
+
+          }
+        }
+      }
     }
     // 作品
     .myworks {
@@ -288,7 +407,7 @@ export default {
       i {
         position: absolute;
         right: 5em;
-        top: 1.3em;
+        top: 5px;
       }
     }
     // 工作
@@ -298,11 +417,11 @@ export default {
       .job-l {
         float: left;
         position: absolute;
-        margin-top:1em;
+        // margin-top:1em;
         left: 3em;
         width: 2px;
         background-color: rgb(167, 12, 12);
-        height: 80%;
+        height: 75%;
       }
       .job-r {
         float: left;
@@ -313,18 +432,21 @@ export default {
         }
         span {
           background-color: #0099ff;
+          position: relative;
           // position: relative;
           &::before {
             content: "";
             display: block;
             position: absolute;
-            left: 2.6em;
+            left: -2.9em;
+            top: 12px;
             width: 1em;
             height: 1em;
             background-color: rgb(167, 12, 12);
             border: 3px solid rgb(230, 166, 166);
             border-radius: 50%;
           }
+          
         }
         b {
           position: relative;
@@ -358,6 +480,8 @@ export default {
     float: left;
     border-radius: 5px;
     height: -webkit-fit-content;
+    position: relative;
+    transition: top ease-in-out 0.1s;
   }
 }
 </style>
