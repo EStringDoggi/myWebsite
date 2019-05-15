@@ -12,10 +12,10 @@
     </transition>
     <ul class="pcMenu">
       <li>
-        <router-link to="/resume">关于我</router-link>
+        <router-link to="/works">作品展示</router-link>
       </li>
       <li>
-        <router-link to="/works">作品展示</router-link>
+        <router-link to="/resume">关于我</router-link>
       </li>
       <li>
         <router-link to="/trend">动态</router-link>
@@ -29,10 +29,10 @@
     <div class="menu" :style="menuHeight">
       <ul>
         <li @click="menuHeight.height = '0px'">
-          <router-link to="/resume">关于我</router-link>
+          <router-link to="/works">作品展示</router-link>
         </li>
         <li @click="menuHeight.height = '0px'">
-          <router-link to="/works">作品展示</router-link>
+          <router-link to="/resume">关于我</router-link>
         </li>
         <li @click="menuHeight.height = '0px'">
           <router-link to="/trend">动态</router-link>

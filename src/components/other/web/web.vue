@@ -18,9 +18,8 @@
         <i class="el-icon-arrow-left" @click="arrow(1)"></i>
       </div>
       <div class="main" :style="rotateY">
-        <!-- <i class="el-icon-arrow-right"></i> -->
         <!-- 页面 -->
-        <!-- 天文 -->
+        <!-- 科普 -->
         <div class="Astronomy">
           <div class="item" v-for="(item,index) in Astronomy" :key="index">
             <a :href="item.url">
@@ -81,7 +80,7 @@
       <div class="arrow-right">
         <i class="el-icon-arrow-right" @click="arrow(2)"></i>
       </div>
-            <!-- 地面 -->
+      <!-- 地面 -->
       <div class="floor clearfix">
         <div>
           <div></div>
@@ -334,19 +333,15 @@ export default {
       //菜单
       menu: [
         {
-          //   funcName:'changePage(1)',
-          msg: "天文"
+          msg: "科普"
         },
         {
-          //   funcName:'changePage(2)',
           msg: "健康"
         },
         {
-          //   funcName:'changePage(3)',
           msg: "时尚"
         },
         {
-          //   funcName:'changePage(4)',
           msg: "趣味"
         }
       ],
@@ -363,18 +358,24 @@ export default {
           sub_title: "简称ISS",
           img_url: "static/img/web/ISS.jpg",
           url: "https://live.bilibili.com/14047"
+        },
+        {
+          title: "鸟百科",
+          sub_title: "鸟类检索",
+          img_url: "static/img/web/niaobaike.jpg",
+          url: "https://www.niaobaike.com/"
         }
       ],
       fashion: [
         {
           title: "香水时代",
-          sub_title: "寻遍万物芳香",
+          sub_title: "找味道",
           img_url: "static/img/web/nosetime.jpg",
           url: "https://www.nosetime.com"
         },
         {
           title: "sephora",
-          sub_title: "给对象挑礼物不用愁",
+          sub_title: "挑礼物",
           img_url: "static/img/web/sephora.jpg",
           url: "https://www.sephora.cn/"
         }
@@ -393,6 +394,12 @@ export default {
           sub_title: "H5版，和朋友在线对决吧",
           img_url: "static/img/web/taiko.jpg",
           url: "https://taiko.bui.pm/"
+        },
+        {
+          title: "精灵宝可梦百科",
+          sub_title: "宝可梦世界",
+          img_url: "static/img/web/baokemeng.jpg",
+          url: "http://wiki.52poke.com"
         }
       ],
       rotateY: {
@@ -444,7 +451,7 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-@import url('less.less');
+@import url("less.less");
 .web {
   padding-top: 4em;
   // min-height: 700px;
@@ -489,11 +496,11 @@ export default {
         height: 100px;
         border: 1px solid #999;
         transition: all ease-in-out 0.2s;
-        &:hover{
-            background-color: rgba(255, 255, 255, 0.3);
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.3);
         }
-        &:active{
-            background-color: rgba(255, 255, 255, 0.6);
+        &:active {
+          background-color: rgba(255, 255, 255, 0.6);
         }
       }
     }
@@ -623,7 +630,6 @@ export default {
   .arrow-right {
     position: relative;
     z-index: 999;
-    // background-image:url(about:blank);
   }
   .el-icon-arrow-left,
   .el-icon-arrow-right {
@@ -637,7 +643,6 @@ export default {
     line-height: 5em;
     padding: 0 1em;
     transition: all ease-in-out 0.2s;
-    // z-index: 99;
     &:hover {
       cursor: pointer;
       background-color: rgba(0, 0, 0, 0.9);
@@ -645,16 +650,16 @@ export default {
     }
   }
   @media screen and (max-width: 1000px) {
-    .aside{
+    .aside {
       display: none;
     }
   }
   @media screen and (max-width: 767px) {
-    .main{
+    .main {
       transform-origin: @transform-origin-md;
       width: @page-width-md;
       height: @page-height-md;
-      & > div{
+      & > div {
         width: @page-width-md;
         height: @page-height-md;
         justify-content: space-around;
@@ -668,13 +673,13 @@ export default {
       & > div:nth-child(4) {
         transform: rotateY(90deg) translateX(@page-width-md) translateZ(0.1px);
       }
-      .item{
+      .item {
         width: @item-width-md;
         height: @item-height-md;
         margin: 0;
-        .title{
+        .title {
           line-height: 1.5em;
-          i{
+          i {
             display: block;
             padding: 0;
           }
@@ -682,19 +687,18 @@ export default {
       }
     }
   }
-    @media screen and (max-width: 414px) {
-      .floor{
-        display: none;
-      }
-    .main{
+  @media screen and (max-width: 414px) {
+    .floor {
+      display: none;
+    }
+    .main {
       transform-origin: @transform-origin-sm;
       width: @page-width-sm;
       height: @page-height-sm;
-      & > div{
+      & > div {
         width: @page-width-sm;
         height: @page-height-sm;
         justify-content: center;
-        
       }
       & > div:nth-child(2) {
         transform: rotateY(180deg) translateZ(@page-width-sm);
@@ -705,21 +709,21 @@ export default {
       & > div:nth-child(4) {
         transform: rotateY(90deg) translateX(@page-width-sm) translateZ(0.1px);
       }
-      .item{
+      .item {
         width: @item-width-sm;
         height: @item-height-sm;
         margin: 10px;
-        .title{
+        .title {
           line-height: 1.5em;
-          i{
-          font-size: 0.5em;
+          i {
+            font-size: 0.5em;
             display: block;
             padding: 0;
           }
         }
       }
       .el-icon-arrow-left,
-      .el-icon-arrow-right{
+      .el-icon-arrow-right {
         padding: 0 0.5em;
       }
     }

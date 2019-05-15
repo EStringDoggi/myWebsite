@@ -256,12 +256,10 @@ export default {
     window.addEventListener('scroll',()=>{
     // 屏幕滚动距离
     scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    // console.log("scrollTop:",scrollTop);
     if(!asideTop){
       asideTop = aside.offsetTop || null;
     }
     if(scrollTop - asideTop > 0){
-        
         aside.style.top = scrollTop - asideTop + 'px';
     }
     if(scrollTop - asideTop < 0){
@@ -417,7 +415,6 @@ export default {
       .job-l {
         float: left;
         position: absolute;
-        // margin-top:1em;
         left: 3em;
         width: 2px;
         background-color: rgb(167, 12, 12);
@@ -433,7 +430,6 @@ export default {
         span {
           background-color: #0099ff;
           position: relative;
-          // position: relative;
           &::before {
             content: "";
             display: block;
@@ -446,19 +442,16 @@ export default {
             border: 3px solid rgb(230, 166, 166);
             border-radius: 50%;
           }
-          
         }
         b {
           position: relative;
           left: 5em;
-          // top: 1em;
           line-height: 2.5em;
         }
         i {
           position: absolute;
           right: 2em;
           line-height: 2.5em;
-          // top: 1em;
         }
         p {
           padding-left: 2em;
