@@ -31,16 +31,16 @@ export default new Router({
       ]
     },
     {
+      path:'/works',
+      component:works
+    },
+    {
       path:'/resume',
       component:resume
     },
     {
       path:'/trend',
       component:trend
-    },
-    {
-      path:'/works',
-      component:works
     },
     {
       path:'*',
