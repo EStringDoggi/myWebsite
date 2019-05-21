@@ -132,13 +132,16 @@ export default {
   min-height: 700px;
   // padding-left: 5em;
   // padding-right: 5em;
+  .modal-content{
+    // max-height: 1000px;
+  }
   .modal-dialog{
     max-width: none;
   }
   .modal-body{
     position: relative;
     img{
-      width: 90%;
+      width: 80%;
       height: auto;
     }
   }
