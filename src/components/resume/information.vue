@@ -1,9 +1,9 @@
 <template>
-  <div style="position:relative">
+  <div class="">
     <em class="page"></em>
-    <div class="head-img">
-      <img src="../../../static/img/IMG_1968_2.jpg" alt>
-    </div>
+    <!-- <div class="head-img"> -->
+      <!-- <img src="../../../static/img/IMG_1968_2.jpg" alt> -->
+    <!-- </div> -->
     <p class="name">
       <i class="el-icon-user-solid"></i>
       <span>张梓康</span>
@@ -41,7 +41,20 @@
     <p class="contact">
       <i class="el-icon-s-promotion"></i>
       <span>邮箱：</span>
-      <span>750441927@qq.com</span>
+      <span>
+        <a href="mailto:750441927@qq.com">
+          750441927@qq.com
+        </a>
+      </span>
+      <br>
+      <a href="https://github.com/EStringDoggi" target="_blank" rel="github">
+        <img src="../../../static/img/icon/icon_github.png" alt="" srcset="" width="20" height="20">
+        <span>github</span>
+      </a>
+      <a href="https://blog.csdn.net/u011364720" target="_blank" rel="noopener noreferrer">
+        <img src="../../../static/img/icon/icon_csdn.png" alt="" srcset="" width="20" height="20">
+        <span>CSDN</span>
+      </a>
     </p>
   </div>
 </template>
@@ -59,6 +72,10 @@ export default {};
     text-align: left;
     padding-left: 4em;
   }
+}
+div:first-child{
+  position:relative;
+  padding: 2em 0;
 }
 .page {
   position: absolute;
@@ -104,6 +121,13 @@ hr {
 i {
   font-size: 1.2em;
 }
+a{
+  text-decoration: none;
+  color: #424242;
+  &:hover{
+    color:chocolate;
+  }
+}
 .name {
   span:nth-of-type(1) {
     font-size: 1.5em;
@@ -119,6 +143,11 @@ i {
 .education {
   span:nth-of-type(1) {
     font-weight: bolder;
+  }
+}
+.contact{
+  a{
+    margin-right: 2em;
   }
 }
 </style>

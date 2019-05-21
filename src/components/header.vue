@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" :style="{backgroundColor:backgroundColor}">
     <transition>
       <div
         class="logo animated"
@@ -24,6 +24,14 @@
         <router-link to="/other/photo">随便看看</router-link>
       </li>
     </ul>
+    <div class="colorSelect" :style="colorSelect" @click="listDisplay($event)">
+      <span class="colorSelectBtn" ></span>
+      <i class="el-icon-arrow-down"></i>
+      <ul class="colorList" :style="colorListDisplay">
+        <li v-for="(item,index) of colorList" :key="index" :style="{backgroundColor:item}"></li>
+      </ul>
+    </div>
+
     <!-- 移动端菜单按钮 -->
     <el-button class="el-icon-more" @click="showMenu"></el-button>
     <div class="menu" :style="menuHeight">
@@ -51,7 +59,17 @@ export default {
       logoAnimate: false,
       menuHeight:{
         height:'0px'
-      }
+      },
+      colorSelect:{
+        backgroundColor:'#0099ff'
+      },
+      colorListDisplay:{
+        display:'none'
+      },
+      colorList:['#ff3232','#ff5132','#ff8432','#fffc32','#6cff32','#32ff4d',
+      '#32ffd3','#0099ff','#3258ff','#6f32ff','#b432ff','#ff32e4','#ff3287',
+      '#000','#ccc',],
+      backgroundColor:'#0099ff'
     };
   },
   methods: {
@@ -67,8 +85,36 @@ export default {
       this.menuHeight.height == '0px'?this.menuHeight.height='300px':this.menuHeight.height='0px'
       console.log("height:",this.menuHeight.height);
       
+    },
+    listDisplay($event){
+      // console.log($event.target.className);
+      if($event.target.tagName.toLowerCase() != 'ul' && $event.target.tagName.toLowerCase() != 'li'){
+        if(this.colorListDisplay['display'] == 'none'){
+          this.colorListDisplay['display'] ='block'
+        }else{
+          this.colorListDisplay['display'] ='none'
+        }
+      }
+      else if($event.target.tagName.toLowerCase() == 'li'){
+        // console.log($event.toElement.style.backgroundColor);
+        this.backgroundColor = $event.toElement.style.backgroundColor
+        this.colorSelect['backgroundColor'] = $event.toElement.style.backgroundColor
+        
+      }
     }
-  }
+  },
+  mounted() {
+    var that = this
+    document.body.addEventListener('click',function(e){
+      console.log(e.target.className);
+      if(e.target.tagName.toLowerCase() != 'li'&&e.target.className !='el-icon-arrow-down'){
+        // console.log(that.colorListDisplay['display']);
+        that.colorListDisplay['display'] = 'none'
+        // that.listDisplay()
+      }
+      
+    })
+  },
 };
 </script>
 <style lang='less' scoped>
@@ -79,12 +125,17 @@ export default {
 */
 
 .header {
-  background-color: #0099ff;
+  // background-color: #0099ff;
   padding-left: 10%;
   padding-right: 10%;
   height: 70px;
-  margin-top: 40px;
-  position: relative;
+  // margin-top: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: all 0.3s ease-out;
+  
   .logo {
     width: 100px;
     height: 100px;
@@ -93,7 +144,7 @@ export default {
     float: left;
     border: 5px solid #fff;
     position: absolute;
-    top: -2em;
+    // top: -2em;
     z-index: 99;
     img {
       width: 100%;
@@ -102,9 +153,11 @@ export default {
     }
   }
   .pcMenu {
-    display: block;
+    display: inline-block;
     text-align: right;
-    padding-right: 5em;
+    position: absolute;
+    right: 6em;
+    // padding-right: 5em;
   }
   .pcMenu li {
     display: inline-block;
@@ -125,7 +178,7 @@ export default {
         display: block;
         opacity: 0;
         position: absolute;
-        top: -1em;
+        bottom: -1em;
         left: 50%;
         transform: translateX(-50%) rotateZ(60deg);
         width: 1.5em;
@@ -135,7 +188,7 @@ export default {
         transition: 0.3s;      
     }
     &:nth-child(2n)::before{
-        top: -2em;
+        bottom: -2em;
     }
     &:hover {
       a{
@@ -145,6 +198,66 @@ export default {
       &::before{
         opacity: 1;
       }
+    }
+
+  }
+  .colorSelect{
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    position: absolute;
+    vertical-align: middle;
+    border: 3px solid #fff;
+    box-sizing: content-box;
+    top: 50%;
+    right: 2em;
+    transform: translateY(-50%);
+    border-radius: 3px;
+    .colorSelectBtn{
+      
+    }
+    &:hover{
+      cursor: pointer;
+    }
+    i{
+    vertical-align: super;
+    color: #fff;
+    }
+    .colorList{
+      position: absolute;
+      top: 2em;
+      right: -5px;
+      background-color: #fff;
+      padding: 0 5px;
+      padding-top: 1em;
+      border-radius: 3px;
+      box-shadow: 0 3px 5px #888;
+      cursor:initial;
+        li{
+          width: 1em;
+          height: 1em;
+          background-color: #ccc;
+          border: 2px solid rgb(236, 236, 236);
+          margin:0 0 1em 0;
+          cursor: pointer;
+          display: inline-block;
+          float: left;
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          top: -16px;
+          right: 5px;
+          border-top-color: transparent;
+          border-right-color: transparent;
+          border-bottom-color: rgb(255, 255, 255);
+          border-left: transparent;
+          border-style: solid;
+          border-width: 8px;
+          z-index: 999;
+          
+
+        }
     }
   }
   .el-icon-more {
@@ -213,7 +326,10 @@ export default {
   }
 }
 @media screen and (max-width: 767px) {
-  .header .pcMenu {
+  .header .pcMenu{
+    display: none;
+  }
+  .header .colorSelect{
     display: none;
   }
 }

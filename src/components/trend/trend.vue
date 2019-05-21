@@ -108,6 +108,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .trend {
+  margin-top: 100px;
   ul {
     padding-right: 40px;
     li {

@@ -21,6 +21,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .other{
+    margin-top: 70px;
     position: relative;
     background-color: rgb(244, 245, 247);
     .link{

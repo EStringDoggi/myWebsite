@@ -16,8 +16,10 @@
     "animate.css": "^3.7.0",
     "bootstrap": "^4.3.1",
     "element-ui": "^2.8.2",
+    "highlight.js": "^9.15.6",
     "jquery": "^3.4.0",
     "popper.js": "^1.15.0",
+    "showdown": "^1.9.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

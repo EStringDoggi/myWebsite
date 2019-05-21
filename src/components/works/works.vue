@@ -22,27 +22,70 @@
         </a>
       </div>
     </div>
-    <div class="detailed">
-      <em></em>
-      <h4>{{title}}</h4>
-      <p>{{introduce}}</p>
-      <b>
-        <i class="el-icon-edit" v-if="iconShow"></i>
-        {{technology}}
-      </b>
+    <div class="detail-minHeight">
+      <div class="detailed">
+        <em></em>
+        <h4>{{title}}</h4>
+        <p>{{introduce}}</p>
+        <b>
+          <i class="el-icon-edit" v-if="iconShow"></i>
+          {{technology}}
+        </b>
+      </div>
+    </div>
+    <!-- 代码块引入 -->
+    <h5 class="myCode">代码展示</h5>
+    <!-- elementUI折叠面板 -->
+    <!-- 通过 accordion 属性来设置是否以手风琴模式显示 -->
+    <div class="myCode" v-highlight>
+      <el-collapse v-model="activeName" >
+        <el-collapse-item title="小程序-文字拖拽处理" name="1">
+          <WechatCanvasTextMove class="codeText" v-once></WechatCanvasTextMove>
+        </el-collapse-item>
+        <el-collapse-item title="小程序-Canvas初始化处理" name="2">
+          <WechatCanvasLoad class="codeText"></WechatCanvasLoad>
+        </el-collapse-item>
+        <el-collapse-item title="小程序-Canvas图片上传" name="3">
+          <WechatImgUpload class="codeText"></WechatImgUpload>
+        </el-collapse-item>
+        <el-collapse-item title="根据浏览器内核选择懒加载图片的格式" name="4">
+          <showUseWebp class="codeText"></showUseWebp>
+        </el-collapse-item>
+        <el-collapse-item title="倒计时" name="5">
+          <showTime class="codeText"></showTime>
+        </el-collapse-item>
+      </el-collapse>
     </div>
   </div>
 </template>
 <script>
+import WechatCanvasTextMove from './codeText-wechat1'
+import WechatCanvasLoad from './codeText-wechat2'
+import WechatImgUpload from './codeText-wechat3'
+import showUseWebp from './codeText-show1'
+import showTime from './codeText-show2'
+// import hljs from 'highlight.js';
+
+
+
 export default {
+  components:{
+    WechatCanvasTextMove,
+    WechatCanvasLoad,
+    WechatImgUpload,
+    showUseWebp,
+    showTime
+  },
   data() {
     return {
       title: "最近半年做的东西",
       introduce: null,
       technology: null,
-      iconShow: false
+      iconShow: false,
+      activeName: '1' //elementUI折叠门板参数
     };
   },
+  
   methods: {
     hover($event) {
       this.iconShow = true;
@@ -77,10 +120,15 @@ export default {
           break;
       }
     }
-  }
+  },
+
 };
 </script>
 <style lang="less" scoped>
+.el-collapse-item__header{
+  // text-align: center;
+  padding-left: 2em!important;
+}
 .works {
   position: relative;
 }
@@ -145,6 +193,7 @@ export default {
   transform: translateY(-20px);
   box-shadow: 0 10px 25px #333;
 }
+// 微信
 .wechat {
   .code {
     position: absolute;
@@ -162,6 +211,40 @@ export default {
   .code {
     top: 0;
   }
+}
+// 详细介绍
+h5.myCode{
+  font-weight: bold;
+  &::before{
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 1px;
+    background-color: #0099ff;
+    vertical-align: middle;
+    right: 1em;
+  }
+  &::after{
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 1px;
+    background-color: #0099ff;
+    vertical-align: middle;
+    left: 1em;
+  }
+}
+div.myCode{
+  padding: 2em;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #888;
+  margin-bottom: 5em;
+}
+.detail-minHeight{
+  min-height: 230px;
 }
 .detailed {
   height: auto;
@@ -198,6 +281,11 @@ export default {
     background-image: url(/static/img/icon/resume.png);
     background-color: rgb(248, 248, 248);
   }
+}
+// 代码块
+.codeText{
+  text-align: left;
+  background-color: rgb(40,44,52);
 }
 @media screen and (max-width: 767px) {
   .flexBox {

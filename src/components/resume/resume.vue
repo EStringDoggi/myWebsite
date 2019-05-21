@@ -240,6 +240,7 @@
 </template>
 <script>
 import information from './information'
+
 export default {
   data() {
     return {
@@ -250,21 +251,31 @@ export default {
     information
   },mounted() {
     var aside = document.getElementsByTagName('aside')[0] || null;
-    var asideTop = aside.offsetTop || null;
+    var headHeight = 100; //导航栏的高度
+    var asideTop = aside.offsetTop  || null;
     var scrollTop;
 
     window.addEventListener('scroll',()=>{
     // 屏幕滚动距离
     scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    console.log("scrollTop:",scrollTop);
+    console.log("asideTop:",asideTop);
+    console.log("-----------");
+    
+    
     if(!asideTop){
-      asideTop = aside.offsetTop || null;
+      asideTop = aside.offsetTop  || null;
     }
-    if(scrollTop - asideTop > 0){
-        aside.style.top = scrollTop - asideTop + 'px';
+    if(scrollTop > 30){
+      aside.style.top = scrollTop - 30 + 'px';
     }
-    if(scrollTop - asideTop < 0){
-      aside.style.top = 0;
+    if(scrollTop < 30){
+      aside.style.top = 0
     }
+    console.log("aside.style.top:",aside.style.top);
+    // if(scrollTop - asideTop - headHeight < 0){
+    //   aside.style.top = 0;
+    // }
 })
   },
   methods: {
@@ -274,7 +285,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .resume {
-
+margin-top: 100px;
 @media screen and (max-width:767px) {
   aside{
     display: none;
