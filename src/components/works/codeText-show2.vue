@@ -22,6 +22,7 @@ export default {
     mounted() {
         var text = ""
         text +=`
+//补0方法-1
 Number.prototype.addZero = function (){
     if(typeof this == 'number'){
         if(this<10){
@@ -30,6 +31,11 @@ Number.prototype.addZero = function (){
     }
     return this
 }
+//补0方法-2
+Number.prototype.addZero2 = function (){
+    return this.toString().replace(/^(\d)$/,"0$1")
+} 
+
 //倒计时
 function countDown(){
     let newDate     = new Date();   //目标时间

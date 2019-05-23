@@ -26,7 +26,7 @@
     </ul>
     <div class="colorSelect" :style="colorSelect" @click="listDisplay($event)">
       <span class="colorSelectBtn" ></span>
-      <i class="el-icon-arrow-down"></i>
+      <i :class="colorIconArrow" class="colorIcon"></i>
       <ul class="colorList" :style="colorListDisplay">
         <li v-for="(item,index) of colorList" :key="index" :style="{backgroundColor:item}"></li>
       </ul>
@@ -69,8 +69,9 @@ export default {
       colorList:['#ff3232','#ff5132','#ff8432','#fffc32','#6cff32','#32ff4d',
       '#32ffd3','#0099ff','#3258ff','#6f32ff','#b432ff','#ff32e4','#ff3287',
       '#000','#ccc',],
-      backgroundColor:'#0099ff'
-    };
+      backgroundColor:'#0099ff',
+      colorIconArrow:'el-icon-arrow-down'
+    }
   },
   methods: {
     enterLogo() {
@@ -91,8 +92,10 @@ export default {
       if($event.target.tagName.toLowerCase() != 'ul' && $event.target.tagName.toLowerCase() != 'li'){
         if(this.colorListDisplay['display'] == 'none'){
           this.colorListDisplay['display'] ='block'
+          this.colorIconArrow = 'el-icon-arrow-up'
         }else{
           this.colorListDisplay['display'] ='none'
+          this.colorIconArrow = 'el-icon-arrow-down'
         }
       }
       else if($event.target.tagName.toLowerCase() == 'li'){
@@ -107,9 +110,10 @@ export default {
     var that = this
     document.body.addEventListener('click',function(e){
       console.log(e.target.className);
-      if(e.target.tagName.toLowerCase() != 'li'&&e.target.className !='el-icon-arrow-down'){
+      if(e.target.tagName.toLowerCase() != 'li' && e.target.className.indexOf('colorIcon') == -1){
         // console.log(that.colorListDisplay['display']);
         that.colorListDisplay['display'] = 'none'
+        that.colorIconArrow = 'el-icon-arrow-down'
         // that.listDisplay()
       }
       
@@ -125,17 +129,14 @@ export default {
 */
 
 .header {
-  // background-color: #0099ff;
   padding-left: 10%;
   padding-right: 10%;
   height: 70px;
-  // margin-top: 40px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
   transition: all 0.3s ease-out;
-  
   .logo {
     width: 100px;
     height: 100px;
@@ -144,7 +145,6 @@ export default {
     float: left;
     border: 5px solid #fff;
     position: absolute;
-    // top: -2em;
     z-index: 99;
     img {
       width: 100%;
@@ -157,7 +157,6 @@ export default {
     text-align: right;
     position: absolute;
     right: 6em;
-    // padding-right: 5em;
   }
   .pcMenu li {
     display: inline-block;
@@ -175,7 +174,7 @@ export default {
     }
     &::before{
         content:'';
-        display: block;
+        display: none;
         opacity: 0;
         position: absolute;
         bottom: -1em;
@@ -196,6 +195,7 @@ export default {
         text-shadow: 0px 2px 2px rgb(12, 85, 182);
       }
       &::before{
+        display: block;
         opacity: 1;
       }
     }
@@ -213,9 +213,7 @@ export default {
     right: 2em;
     transform: translateY(-50%);
     border-radius: 3px;
-    .colorSelectBtn{
-      
-    }
+
     &:hover{
       cursor: pointer;
     }
@@ -255,8 +253,6 @@ export default {
           border-style: solid;
           border-width: 8px;
           z-index: 999;
-          
-
         }
     }
   }
@@ -303,7 +299,6 @@ export default {
         position: absolute;
         top: 1em;
         left: 30%;
-        // transform: translateX(-50%) rotateZ(60deg);
         width: 1.5em;
         height: 1.5em;
         background-image: url(../../static/img/icon/paw_white.png);
