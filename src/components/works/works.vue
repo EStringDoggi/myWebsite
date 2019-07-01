@@ -1,5 +1,14 @@
 <template>
   <div class="works typepage">
+    <div>
+      <div class="vue-mail" @mouseenter="hover(4)">
+        <a href="">
+        <i class="new-icon"></i>
+        <img src="../../../static/img/works/vueMail.jpg" alt="">
+
+        </a>
+      </div>
+    </div>
     <div class="flexBox">
       <div class="show" @mouseenter="hover(1)">
         <a href="show.html">
@@ -116,6 +125,14 @@ export default {
           this.technology =
             "实现技术：html，css3，JavaScript，jQuery，artTemplate，velocity，fullPage，Bootstrap，ajax";
           break;
+        case 4:
+          this.title = "vue移动端商城";
+          this.introduce = `包括主页、消息列表、聊天消息、购物车、订单、个人主页、商品列表、商品详细信息、
+          注册登录等11个页面。逻辑功能上实现商品参数选择、商品添加到购物车或转到订单页、购物车勾选商品结算、
+          商品删改等。使用vuex作为状态管理工具，控制商品信息、个人登录状态、聊天记录等`;
+          this.technology =
+            "实现技术：html，css3，JavaScript，Element-UI，vue.js、vuex、vue-router";
+          break;
         default:
           break;
       }
@@ -135,16 +152,66 @@ export default {
 .flexBox {
   display: flex;
   width: 100%;
-  margin-top: 100px;
-  padding: 50px 0;
+  // margin-top: 100px;
+  // margin-left: 10%;
   margin-bottom: 50px;
+  padding: 50px 0;
+  justify-content: space-around;
 }
+.vue-mail{
+  width: 20vw;
+  margin: 0 auto;
+  height: 20vw;
+  position: relative;
+  overflow: hidden;
+  margin-top: 100px;
+  border-radius: 1em;
+  box-shadow: 0 2px 8px 0px #888;
+  transition: all ease-out 0.3s;
+  a {
+    display: block;
+    &::after {
+      content: "";
+      transition: all ease-out 0.3s;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      border-radius: 1em;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+  .new-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background-image: url('../../../static/img/icon/new-icon.png');
+    background-size: contain;
+    z-index: 2;
+  }
+  img{
+    width: 100%;
+    height: auto;
+  }
+  &:hover{
+    a::after {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  transform: translateY(-20px);
+  box-shadow: 0 10px 25px #333;
+  }
+}
+
 .show,
 .wechat,
 .company {
   float: left;
   position: relative;
-  margin: 0 2em;
+  margin: 0 5em;
   border-radius: 1em;
   overflow: hidden;
   box-shadow: 0 2px 8px 0px #888;
@@ -219,7 +286,7 @@ h5.myCode{
     content: '';
     position: relative;
     display: inline-block;
-    width: 300px;
+    width: 25vw;
     height: 1px;
     background-color: #0099ff;
     vertical-align: middle;
@@ -229,7 +296,7 @@ h5.myCode{
     content: '';
     position: relative;
     display: inline-block;
-    width: 300px;
+    width: 25vw;
     height: 1px;
     background-color: #0099ff;
     vertical-align: middle;
@@ -306,6 +373,14 @@ div.myCode{
     }
     margin: 2em 0;
     float: none;
+  }
+  .vue-mail{
+    width: 200px;
+    height: 200px;
+    .new-icon{
+      width:60px;
+      height: 60px;
+    }
   }
   .detailed {
     display: none;
