@@ -228,7 +228,7 @@
             </i>
           </p>
           <h3>近半年目标</h3>
-          <p>学代码、准备好作品投简历，日语N3备考</p>
+          <p>《JavaScript高级程序设计》</p>
         </div>
       </article>
       <aside class="clearfix" >

@@ -9,7 +9,7 @@
           enter-active-class="animated  zoomIn"
           leave-active-class="animated  zoomOut"
         >
-          <li v-for="(item, index) in menu" :key="index" @click="changePage(index+1)">{{item.msg}}</li>
+          <li v-for="(item, index) in menu" :key="item.id" @click="changePage(index+1)">{{item.msg}}</li>
         </transition-group>
       </div>
 
@@ -333,15 +333,19 @@ export default {
       //菜单
       menu: [
         {
+          id:0,
           msg: "科普"
         },
         {
+          id:1,
           msg: "健康"
         },
         {
+          id:2,
           msg: "时尚"
         },
         {
+          id:3,
           msg: "趣味"
         }
       ],

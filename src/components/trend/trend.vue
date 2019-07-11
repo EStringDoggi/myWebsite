@@ -6,12 +6,12 @@
       enter-active-class="animated  zoomIn"
       leave-active-class="animated  zoomOut"
     >
-      <li v-for="(item,index) in data" v-bind:key="index">
+      <li v-for="item in data" v-bind:key="item.id">
         <div class="head">
           <img src="../../../static/img/logo.png" alt>
+          <b>{{item.name}}</b>
         </div>
         <div class="text">
-          <b>{{item.name}}</b>
           <p>{{item.text}}</p>
         </div>
         <div class="time">
@@ -137,8 +137,8 @@ export default {
         }
       }
       .text {
-        vertical-align: top;
-        display: inline-block;
+        // vertical-align: top;
+        display: block;
         b {
           line-height: 1.5em;
         }

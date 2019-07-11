@@ -2,7 +2,7 @@
   <div class="works typepage">
     <div>
       <div class="vue-mail" @mouseenter="hover(4)">
-        <a href="">
+        <a href="shop.html">
         <i class="new-icon"></i>
         <img src="../../../static/img/works/vueMail.jpg" alt="">
 

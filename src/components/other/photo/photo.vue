@@ -38,8 +38,8 @@
       leave-active-class="animated  zoomOut"
     >
       <div
-        v-for="(item,index) in showList"
-        :key="index"
+        v-for="item in showList"
+        :key="item.id"
         class="item"
         data-target="#myModal"
         data-toggle="modal"

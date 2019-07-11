@@ -20,3 +20,6 @@
 * vue-router
 * axios
 * animate.css
+### 打开
+```
+npm run dev
